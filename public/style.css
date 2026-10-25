@@ -1,0 +1,180 @@
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #0b1120;
+    color: #f1f5f9;
+    font-family: Arial, sans-serif;
+  }
+  
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 7%;
+    border-bottom: 1px solid #253149;
+  }
+  
+  .brand {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .brand span, .intro span {
+    color: #60a5fa;
+  }
+  
+  .secure-label, .muted, footer {
+    color: #94a3b8;
+    font-size: 14px;
+  }
+  
+  .container {
+    width: min(1000px, 90%);
+    margin: 75px auto;
+    display: grid;
+    grid-template-columns: 1fr 390px;
+    gap: 55px;
+    align-items: center;
+  }
+  
+  .intro .eyebrow {
+    color: #60a5fa;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  
+  .intro h1 {
+    font-size: clamp(34px, 5vw, 52px);
+    line-height: 1.15;
+  }
+  
+  .intro > p:last-child {
+    color: #aab6ca;
+    line-height: 1.8;
+  }
+  
+  .login-card, .dashboard {
+    background: #172237;
+    border: 1px solid #2b3a53;
+    border-radius: 16px;
+    padding: 30px;
+  }
+  
+  .login-card h2, .dashboard h2 {
+    margin-top: 0;
+  }
+  
+  label {
+    display: block;
+    margin: 20px 0 8px;
+    font-size: 14px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 13px;
+    background: #0b1120;
+    color: white;
+    border: 1px solid #384761;
+    border-radius: 7px;
+    outline-offset: 3px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 24px;
+    border: 0;
+    border-radius: 7px;
+    background: #3b82f6;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #2563eb;
+  }
+  
+  .secondary {
+    background: #334155;
+  }
+  
+  #message {
+    color: #fca5a5;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .privacy-note {
+    margin-top: 25px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 12px;
+  }
+  
+  .dashboard {
+    grid-column: 1 / -1;
+  }
+  
+  .dashboard-panel {
+    padding: 18px;
+    margin: 20px 0;
+    border-radius: 10px;
+    background: #0b1120;
+  }
+  
+  #audit-list {
+    line-height: 2;
+    overflow-wrap: anywhere;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 25px;
+  }
+  
+  @media (max-width: 700px) {
+    .container {
+      grid-template-columns: 1fr;
+      margin: 40px auto;
+      gap: 25px;
+    }
+  
+    .topbar {
+      padding: 18px 5%;
+    }
+  
+    .secure-label {
+      font-size: 11px;
+    }
+  }
+  
+
+
+/* Respect visibility controlled by JavaScript */
+[hidden],
+.hidden {
+  display: none !important;
+}
+
+#login-card:not([hidden]) {
+  display: block;
+}
+
+
+
+[hidden],
+.hidden {
+  display: none !important;
+}

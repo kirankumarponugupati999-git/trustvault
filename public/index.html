@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrustVault | Secure Documents</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Trust<span>Vault</span></div>
+    <span class="secure-label">Secure Document Sharing</span>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p class="eyebrow">YOUR DOCUMENTS. YOUR CONTROL.</p>
+      <h1>Security you can <span>trust.</span></h1>
+      <p>Share documents securely, control access, and maintain a traceable audit history.</p>
+    </section>
+
+    <section class="login-card" id="login-card">
+      <h2>Welcome back</h2>
+      <p class="muted">Sign in to access your secure workspace.</p>
+
+      <form id="login-form">
+        <label for="email">Email address</label>
+        <input id="email" type="email" autocomplete="username"
+          placeholder="admin@trustvault.local" required>
+
+        <label for="password">Password</label>
+        <input id="password" type="password"
+          autocomplete="current-password" placeholder="Enter your password"
+          required>
+
+        <button type="submit" id="login-button">Sign in securely</button>
+        <p id="message" role="status" aria-live="polite"></p>
+      </form>
+      <p class="privacy-note">Protected access · Activity logging</p>
+    </section>
+
+    
+<section class="dashboard hidden" id="dashboard" hidden>
+  <h2>Your secure workspace</h2>
+  <p id="user-info"></p>
+
+  <div class="dashboard-panel">
+    <h3>Account status</h3>
+    <p>You are authenticated with TrustVault.</p>
+    <p id="role-info"></p>
+  </div>
+
+  <div class="dashboard-panel">
+    <h3>Upload a document</h3>
+    <form id="upload-form">
+      <label for="document-file">Choose PDF, TXT, PNG or JPG (max 5 MB)</label>
+      <input
+        type="file"
+        id="document-file"
+        name="document"
+        accept=".pdf,.txt,.png,.jpg,.jpeg"
+        required
+      />
+      <button type="submit">Upload document</button>
+    </form>
+    <p id="upload-message" role="status"></p>
+  </div>
+
+  <div class="dashboard-panel">
+    <h3>Your documents</h3>
+    <button type="button" id="refresh-documents">Refresh documents</button>
+    <ul id="document-list"></ul>
+    <p id="documents-message" role="status"></p>
+  </div>
+
+  <div class="dashboard-panel">
+    <h3>Share a document</h3>
+    <form id="share-form">
+      <label for="share-document-id">Document ID</label>
+      <input
+        type="number"
+        id="share-document-id"
+        min="1"
+        required
+        placeholder="Enter document ID"
+      />
+  
+      <label for="share-email">Recipient email</label>
+      <input
+        type="email"
+        id="share-email"
+        required
+        placeholder="Existing TrustVault user's email"
+      />
+  
+      <label>
+        <input type="checkbox" id="share-can-download" />
+        Allow recipient to download
+      </label>
+  
+      <button type="submit">Share document</button>
+    </form>
+    <p id="share-message" role="status"></p>
+  
+    <h3>Revoke access</h3>
+    <form id="revoke-form">
+      <label for="revoke-document-id">Document ID</label>
+      <input type="number" id="revoke-document-id" min="1" required />
+  
+      <label for="revoke-email">Recipient email</label>
+      <input type="email" id="revoke-email" required />
+  
+      <button type="submit" class="secondary">Revoke access</button>
+    </form>
+    <p id="revoke-message" role="status"></p>
+  </div>
+  
+  <section id="audit-section" class="hidden">
+    <h3>Recent audit activity</h3>
+    <ul id="audit-list"></ul>
+  </section>
+
+  <button id="logout-button" class="secondary">Sign out</button>
+</section>
+
+  </main>
+
+  <footer>TrustVault · Secure document access with accountability</footer>
+</body>
+</html>
